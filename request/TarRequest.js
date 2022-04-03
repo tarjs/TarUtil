@@ -13,7 +13,9 @@ export default function TarRequest(method, url, value, callback) {
     	str = ''
     }
 	if (method == 'GET') {
-		str = '?' + str
+		if (value) {
+			str = '?' + str
+		}
         var httpRequest = new XMLHttpRequest()
         var obj = undefined
         httpRequest.open(method, url + str, true)
