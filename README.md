@@ -1,8 +1,9 @@
 # TarUtil
 
-## 这是个用原生 JavaScript 编写的工具类，它包含了一些常见的工具
+这是个用原生 JavaScript 编写的工具类，它包含了一些常见的工具
 
-## 使用方法：**import * as tar from '此包在你项目的位置/tar.js'**
+使用方法：**import * as tar from '此包在你项目的位置/tar.js'**
+
 ---
 ## 基础方法：
 ### 1. **tar.elemId(id)** -- id 为 Dom 的 id 标签，值为字符串，等价于 document.getElementById(id)
