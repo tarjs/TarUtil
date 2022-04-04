@@ -20,5 +20,5 @@ export function clog(str) {
 }
 
 export function request(method, url, value, callback) {
-	TarRequest(method, url, value, callback)
+    return TarRequest(method, url, value, callback)
 }
