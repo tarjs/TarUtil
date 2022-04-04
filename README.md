@@ -14,7 +14,7 @@
 ### 6. **tar.clog(str)** -- str 为 输出字符串，等价于 console.log(str)
 
 ## 其他方法：
-### 1. **tar.request(method, url, value, callback)** -- method 为请求类型，值只能为 “GET” 或 “POST”，url 为 请求链接，值为字符串，value 为 请求参数，值为对象，无需请求参数时应为 null，callback 为回调函数
+### 1. **tar.request(method, url, value, callback)** -- method 为请求类型，值只能为 “GET” 或 “POST”，url 为 请求链接，值为字符串，value 为请求参数，值为对象，无需请求参数时应为 null，callback 为回调函数
 
 <br>
 以下是使用演示：
@@ -32,4 +32,27 @@ tar.request('GET', 'https://xxx', {
 tar.request('GET', 'https://xxx', null, (res) => {
     tar.clog(res);
 })
+```
+### 2. **tar.uFor(tagName, value, elem, array)** -- tagName 为标签名，value 为数组内对象名及标签className（注：如果数组内非对象这个值仅为标签className），elem 为在哪个 id 为 elem 的标签内循环渲染标签，以上参数均为字符串，array 为数组，传入并进行循环渲染的值
+<br>
+以下为使用演示：
+数组内为对象时：
+
+```javascript
+tar.uFor('BUTTON', 'name', null, [
+				{
+					name: 'xxx'
+				},
+				{
+					name: 'xxx'
+				},
+				{
+					name: 'xxx'
+				}
+			])
+```
+为简单数组时：
+
+```javascript
+tar.uFor('div', '', 'text', ['xxx', 'xxx', 'xxx', 'xxx'])
 ```
