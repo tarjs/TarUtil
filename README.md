@@ -36,6 +36,7 @@ tar.request('GET', 'https://xxx', null, (res) => {
 ### 2. **tar.uFor(tagName, value, elem, array)** -- tagName 为标签名，value 为数组内对象名及标签className（注：如果数组内非对象这个值仅为标签className），elem 为在哪个 id 为 elem 的标签内循环渲染标签，以上参数均为字符串，array 为数组，传入并进行循环渲染的值
 <br>
 以下为使用演示：
+
 数组内为对象时：
 
 ```javascript
