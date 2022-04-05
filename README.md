@@ -41,16 +41,16 @@ tar.request('GET', 'https://xxx', null, (res) => {
 
 ```javascript
 tar.uFor('BUTTON', 'name', null, [
-				{
-					name: 'xxx'
-				},
-				{
-					name: 'xxx'
-				},
-				{
-					name: 'xxx'
-				}
-			])
+    {
+        name: 'xxx'
+    },
+    {
+        name: 'xxx'
+    },
+    {
+        name: 'xxx'
+    }
+])
 ```
 为简单数组时：
 
