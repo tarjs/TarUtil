@@ -12,12 +12,12 @@ export default function TarRequest(method, url, value, callback) {
     	console.log('null')
     	str = ''
     }
-	if (method == 'GET') {
+    var httpRequest = new XMLHttpRequest()
+    var obj = undefined
+	if (method.toUpperCase() == 'GET') {
 		if (value) {
 			str = '?' + str
 		}
-        var httpRequest = new XMLHttpRequest()
-        var obj = undefined
         httpRequest.open(method, url + str, true)
         httpRequest.send()
         httpRequest.onreadystatechange = () => {
@@ -30,9 +30,7 @@ export default function TarRequest(method, url, value, callback) {
 		function transferFailed() {
 			if (callback) callback('数据接收出错')
 		}
-    } else if (method == 'POST') {
-        var httpRequest = new XMLHttpRequest()
-        var obj = undefined
+    } else if (method.toUpperCase() == 'POST') {
         httpRequest.open(method, url, true)
 		httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpRequest.send(str)
