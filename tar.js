@@ -1,6 +1,7 @@
 import TarRequest from './TarRequest/TarRequest.js'
 import TarFor from './TarFor/TarFor.js'
 import TarShow from './TarShow/TarShow.js'
+import Observer from './TarReactivity/TarReactivity.js'
 
 export function elemId(id) {
     return document.getElementById(id)
@@ -31,4 +32,8 @@ export function uFor(tagName, value, elem, array) {
 
 export function show(value) {
     return TarShow(value)
+}
+
+export function observer(data, domNode) {
+    return Observer(data, domNode)
 }

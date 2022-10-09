@@ -1,4 +1,4 @@
-export default function TarRequest(method: string, url: string, value: any, callback: (obj: any) => void ) {
+export default function TarRequest(method: string, url: string, value: unknown, callback: (obj: any) => void ) {
     var httpRequest: any = new XMLHttpRequest()
     var obj: undefined = undefined
     if (value) {
