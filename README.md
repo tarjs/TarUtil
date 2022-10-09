@@ -72,8 +72,3 @@ const data = {
 
 tar.observer(data, '#app')
 ```
-为简单数组时：
-
-```javascript
-tar.uFor('div', '', 'text', ['xxx', 'xxx', 'xxx', 'xxx'])
-```
