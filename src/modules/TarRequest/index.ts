@@ -1,12 +1,12 @@
-export default function TarRequest(method: string, url: string, value: unknown, callback: (obj: any) => void ) {
-    var httpRequest: any = new XMLHttpRequest()
-    var obj: undefined = undefined
+const TarRequest = (method: string, url: string, value: any, callback: (obj: any) => void ) => {
+    const httpRequest: any = new XMLHttpRequest()
+    let obj: undefined = undefined
     if (value) {
     	var strArr: string[] = [];
     	var str: string = ''
     	Object.keys(value).forEach((key) => {
-    		var name = key
-    		var va = value[key]
+    		let name = key
+    		let va = value[key]
     		strArr.push(name + '=' + va)
     		str = strArr.join('&')
     	})
@@ -25,10 +25,10 @@ export default function TarRequest(method: string, url: string, value: unknown, 
                 if (callback) callback(obj)
             }
         }
-		httpRequest.addEventListener('error', transferFailed);
-		function transferFailed() {
+        const transferFailed = () => {
 			if (callback) callback('数据接收出错')
 		}
+		httpRequest.addEventListener('error', transferFailed);
     } else if (method.toUpperCase() === 'POST') {
         httpRequest.open(method, url, true)
 		httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -39,9 +39,11 @@ export default function TarRequest(method: string, url: string, value: unknown, 
                 if (callback) callback(obj)
             }
         }
-        httpRequest.addEventListener('error', transferFailed);
-        function transferFailed() {
+        const transferFailed = () => {
         	if (callback) callback('数据接收出错')
         }
+        httpRequest.addEventListener('error', transferFailed);
     }
 }
+
+export default TarRequest

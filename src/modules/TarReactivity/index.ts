@@ -1,8 +1,8 @@
-export default function Observer(obj: unknown, domNode?:string) {
+const Observer = (obj: any, domNode?:string) => {
   const domTree = document.querySelector(domNode!) as HTMLAreaElement
   if (!obj || typeof obj !== 'object') return
   Object.keys(obj).forEach(key => {
-    let value = obj[key]
+    let value: string | unknown = obj[key]
     checkDom(domTree, key, value)
     Observer(value)
     Object.defineProperty(obj, key, {
@@ -20,7 +20,7 @@ export default function Observer(obj: unknown, domNode?:string) {
   })
 }
 
-function checkDom (domTree: HTMLElement, key: string, newValue: any) {
+const checkDom = (domTree: HTMLElement, key: string, newValue: any) => {
   const childNodes = domTree.childNodes as NodeListOf<HTMLElement>
   childNodes.forEach(item => {
     if (item.tagName === 'INPUT' && item.getAttribute('data-bind') === key) {
@@ -34,7 +34,7 @@ function checkDom (domTree: HTMLElement, key: string, newValue: any) {
   })
 }
 
-function haveBind(dom: HTMLElement, key: string, newValue: any) {
+const haveBind = (dom: HTMLElement, key: string, newValue: any) => {
   if (dom.attributes === undefined) {
     return 
   } else {
@@ -47,3 +47,5 @@ function haveBind(dom: HTMLElement, key: string, newValue: any) {
     }
   }
 }
+
+export default Observer
