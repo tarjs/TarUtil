@@ -15,8 +15,8 @@ yarn tsc -p tsconfig-cjs.json // to build commonjs version
 After build, you have a esm or commonjs version release. You can use `dist/esm/index.js` or `dist/cjs/index.js` to coding a web page.
 
 ### Some functions to use:
-[TarRequest]("./src/modules/TarRequest/README.md")\
-[TarReactivity]("./src/modules/TarReactivity/README.md")
+[TarRequest](./src/modules/TarRequest/README.md)\
+[TarReactivity](./src/modules/TarReactivity/README.md)
 
 ## License
 
