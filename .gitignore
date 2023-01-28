@@ -67,3 +67,5 @@ typings/
 _book
 
 dist
+lib
+.idea

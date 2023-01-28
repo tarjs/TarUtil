@@ -1,17 +1,17 @@
 {
   "name": "tar-util",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/index.js",
+  "version": "1.0.0-fix",
+  "description": "This is a TypeScript library. It is built by Typescript",
+  "main": "./src/index.ts",
   "scripts": {
-    "build": "Remove-Item dist -Recurse && tsc -p tsconfig.json && tsc -p consfig-cjs.json",
+    "build": "rm -rf lib && tsc -p tsconfig.json",
     "watch": "yarn test --watch",
     "setup": "yarn install && npx npm-install-peers",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["TypeScript", "TypeScript tools"],
+  "author": "Anthony Lu",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.14",
