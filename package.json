@@ -1,13 +1,14 @@
 {
   "name": "tar-util",
-  "version": "1.0.0-fix",
+  "version": "1.0.2",
   "description": "This is a TypeScript library. It is built by Typescript",
   "main": "./src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "rollup --config rollup.config.js",
-    "watch": "yarn test --watch",
-    "setup": "yarn install && npx npm-install-peers",
+    "build:esm": "rollup --config",
+    "build": "rollup --config --format iife -n tar",
+    "watch": "pnpm test --watch",
+    "setup": "pnpm install && npx npm-install-peers",
     "test": "jest"
   },
   "keywords": [
