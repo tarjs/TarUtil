@@ -9,8 +9,8 @@ TarUtil is a simple Javascript library. It only have a little function to use, b
 
 Before use, you need build this repo. You can use some command to build like this.
 ``` 
-yarn tsc -p tsconfig.json // to build esm version
-yarn tsc -p tsconfig-cjs.json // to build commonjs version
+pnpm build:esm // to build esm version
+pnpm build // to build iife version
 ```
 After build, you have a esm or commonjs version release. You can use `dist/esm/index.js` or `dist/cjs/index.js` to coding a web page.
 

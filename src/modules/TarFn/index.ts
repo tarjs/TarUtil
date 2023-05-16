@@ -4,10 +4,10 @@ export default (node: string, ...args:Function[]) => {
     if (childNode instanceof HTMLElement ) {
       childNode.getAttributeNames().forEach((attr) => {
         if (attr.indexOf('$') != -1) {
-          childNode.addEventListener(attr.slice(1), () => {
+          childNode.addEventListener(attr.slice(1), (e) => {
             args.forEach((fn) => {
               if (childNode.getAttribute(attr) === fn.name)
-                fn()
+                fn(e)
             })
           })
         }

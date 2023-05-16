@@ -17,7 +17,17 @@ const Observer = (obj: any, domNode?:string) => {
         checkDom(domTree, key, newValue)
       }
     })
+    const childNodes = domTree.childNodes as NodeListOf<HTMLElement>
+    childNodes.forEach((inputNode) => {
+      if ((inputNode.tagName === 'INPUT' && inputNode.getAttribute('model-value') === key)) {
+        const inputFn = (e: any) => obj[key] = e.target.value
+        const inputItem = inputNode as HTMLInputElement
+        inputItem.value = obj[key]
+        inputNode.addEventListener('input', inputFn)
+      }
+    })
   })
+  return obj
 }
 
 const checkDom = (domTree: HTMLElement, key: string, newValue: any) => {

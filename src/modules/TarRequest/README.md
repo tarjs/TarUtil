@@ -1,28 +1,21 @@
-# TarReactivity
+# TarRequest
 
-This is a function to make data to reactivity.
+This is a simple request function
 
 ## Usage
 
-You need push a DOM node and a data to this function.
-
-Create a html file, and add this DOM node.
-
-```html
-<div id="app">
-    <input bind-value="input"/>
-    <span data-bind="result"></span>
-    <span bind-style="color">确定</span>
-</div>
-```
-After you need create a data object to function.
-
+If you want to push value to take request. You can used like
 ```javascript
-const data = {
-    input: '123',
-    result: 'res',
-    color: 'color: red'
-}
+tar.request('GET', 'https://xxx', {
+    key: 'value'
+}, (res) => {
+    tar.clog(res);
+})
+```
 
-tar.observer(data, '#app')
+If do not have value. You can used like
+```javascript
+tar.request('GET', 'https://xxx', null, (res) => {
+    tar.clog(res);
+})
 ```
