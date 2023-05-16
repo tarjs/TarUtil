@@ -1,6 +1,6 @@
 {
   "name": "tar-util",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a TypeScript library. It is built by Typescript",
   "main": "./src/index.ts",
   "type": "module",
