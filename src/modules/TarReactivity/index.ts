@@ -1,5 +1,5 @@
-const Observer = (obj: any, domNode?:string) => {
-  const domTree = document.querySelector(domNode!) as HTMLAreaElement
+const Observer = (obj: any, domNode?:string | HTMLElement) => {
+  const domTree = typeof(domNode) === 'string' ? document.querySelector(domNode!) as HTMLAreaElement : domNode as HTMLAreaElement
   if (!obj || typeof obj !== 'object') return
   Object.keys(obj).forEach(key => {
     let value: string | unknown = obj[key]
