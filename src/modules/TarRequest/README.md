@@ -6,7 +6,7 @@ This is a simple request function
 
 If you want to push value to take request. You can used like
 ```javascript
-tar.request('GET', 'https://xxx', {
+tar.createRequest('GET', 'https://xxx', {
     key: 'value'
 }, (res) => {
     tar.clog(res);
@@ -15,7 +15,7 @@ tar.request('GET', 'https://xxx', {
 
 If do not have value. You can used like
 ```javascript
-tar.request('GET', 'https://xxx', null, (res) => {
+tar.createRequest('GET', 'https://xxx', null, (res) => {
     tar.clog(res);
 })
 ```

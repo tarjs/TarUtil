@@ -24,5 +24,11 @@ const data = {
     color: 'color: red'
 }
 
-tar.observer(data, '#app')
+tar.createObserver(data, '#app')
+// or
+const data = tar.createObserver({
+    input: '123',
+    result: 'res',
+    color: 'color: red'
+}, '#app')
 ```
