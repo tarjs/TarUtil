@@ -11,8 +11,8 @@ Create a html file, and add this DOM node.
 ```html
 <div id="app">
     <input bind-value="input"/>
-    <span data-bind="result"></span>
-    <span bind-style="color">确定</span>
+    <span data-bind="result">result: $t</span>
+    <span bind-style="color">return</span>
 </div>
 ```
 After you need create a data object to function.
