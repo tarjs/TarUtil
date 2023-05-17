@@ -1,3 +1,4 @@
+import checkDom from "./checkDom"
 import domNode from "./domNode.type"
 
 const Observer = (obj: any, domNode?: domNode) => {
@@ -31,59 +32,4 @@ const Observer = (obj: any, domNode?: domNode) => {
   })
   return obj
 }
-
-let inText: Array<{
-  dom: HTMLElement
-  text: string
-}> = []
-const checkDom = (domTree: HTMLElement, key: string, newValue: any) => {
-  const childNodes = domTree.childNodes as NodeListOf<HTMLElement>
-  childNodes.forEach(item => {
-    if (item.tagName === 'INPUT' && item.getAttribute('data-bind') === key) {
-      const inputItem = item as HTMLInputElement
-      inputItem.value = newValue
-    } else if (item instanceof HTMLElement && item.getAttribute('data-bind') === key) {
-      // item with null change
-      if (item.innerText === '') {
-        item.innerText = newValue        
-      }
-      else {
-        // add `$t` template string to array
-        // save template string
-        if (item.innerText.indexOf('$t') !== -1) {
-          inText.push({
-            dom: item,
-            text: item.innerText
-          })
-        }
-        // get all `$t` template string
-        inText.forEach((text) => {
-          if (text.dom === item) {
-            item.innerText = text.text.replace(/\$t/g, newValue)
-          }
-        })
-      }
-    } else if (item.tagName === 'INPUT' && item.getAttribute('model-value') === key) {
-      const inputItem = item as HTMLInputElement
-      inputItem.value = newValue
-    } else {
-      haveBind(item, key, newValue)
-    }
-  })
-}
-
-const haveBind = (dom: HTMLElement, key: string, newValue: any) => {
-  if (dom.attributes === undefined) {
-    return 
-  } else {
-    for(let i = 0; i < dom.attributes.length; i++) {
-      const domAttr = dom.attributes.item(i) as Attr
-      if (domAttr.name.indexOf('bind-') > -1 && domAttr.value === key) {
-        const att = domAttr.name.substr(domAttr.name.lastIndexOf("-") + 1)
-        dom[att] = newValue
-      }
-    }
-  }
-}
-
 export default Observer
