@@ -15,8 +15,8 @@ pnpm build // to build iife version
 After build, you have a esm or commonjs version release. You can use `dist/esm/index.js` or `dist/cjs/index.js` to coding a web page.
 
 ### Some functions to use:
-[TarRequest](./src/modules/TarRequest/README.md)\
-[TarReactivity](./src/modules/TarReactivity/README.md)
+[TarReactivity](./src/modules/TarReactivity/README.md)\
+[TarStyle](./src/modules/TarStyle/README.md)
 
 ## License
 
