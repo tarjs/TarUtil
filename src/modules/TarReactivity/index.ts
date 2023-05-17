@@ -41,7 +41,7 @@ const checkDom = (domTree: HTMLElement, key: string, newValue: any) => {
       const inputItem = item as HTMLInputElement
       inputItem.value = newValue
     } else if (item instanceof HTMLElement && item.getAttribute('data-bind') === key) {
-      if (item.innerText === '') {
+      if (item.innerText.indexOf('$t') === -1) {
         item.innerText = newValue        
       }
       else {
@@ -57,6 +57,9 @@ const checkDom = (domTree: HTMLElement, key: string, newValue: any) => {
           }
         })
       }
+    } else if (item.tagName === 'INPUT' && item.getAttribute('model-value') === key) {
+      const inputItem = item as HTMLInputElement
+      inputItem.value = newValue
     } else {
       haveBind(item, key, newValue)
     }
