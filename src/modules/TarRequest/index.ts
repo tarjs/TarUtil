@@ -26,7 +26,7 @@ const TarRequest = (method: string, url: string, value: any, callback: (obj: any
             }
         }
         const transferFailed = () => {
-			if (callback) callback('数据接收出错')
+			if (callback) callback('data error')
 		}
 		httpRequest.addEventListener('error', transferFailed);
     } else if (method.toUpperCase() === 'POST') {
@@ -40,7 +40,7 @@ const TarRequest = (method: string, url: string, value: any, callback: (obj: any
             }
         }
         const transferFailed = () => {
-        	if (callback) callback('数据接收出错')
+        	if (callback) callback('data error')
         }
         httpRequest.addEventListener('error', transferFailed);
     }

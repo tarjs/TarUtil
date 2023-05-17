@@ -43,16 +43,20 @@ const checkDom = (domTree: HTMLElement, key: string, newValue: any) => {
       const inputItem = item as HTMLInputElement
       inputItem.value = newValue
     } else if (item instanceof HTMLElement && item.getAttribute('data-bind') === key) {
-      if (item.innerText.indexOf('$t') === -1) {
+      // item with null change
+      if (item.innerText === '') {
         item.innerText = newValue        
       }
       else {
+        // add `$t` template string to array
+        // save template string
         if (item.innerText.indexOf('$t') !== -1) {
           inText.push({
             dom: item,
             text: item.innerText
           })
         }
+        // get all `$t` template string
         inText.forEach((text) => {
           if (text.dom === item) {
             item.innerText = text.text.replace(/\$t/g, newValue)

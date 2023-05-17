@@ -11,6 +11,7 @@ export default (node: string | HTMLElement, fns: any) => {
                 fns[key](e)
             }
           })
+          // input kkeyboard event
           if (childNode.tagName === 'INPUT' && attr.indexOf('.')) {
             const event = attr.split('.')[0]
             const keyCode = attr.split('.')[1]
