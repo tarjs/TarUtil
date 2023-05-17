@@ -1,4 +1,6 @@
-const Observer = (obj: any, domNode?:string | HTMLElement) => {
+import domNode from "./domNode.type"
+
+const Observer = (obj: any, domNode?: domNode) => {
   const domTree = typeof(domNode) === 'string' ? document.querySelector(domNode!) as HTMLAreaElement : domNode as HTMLAreaElement
   if (!obj || typeof obj !== 'object') return
   Object.keys(obj).forEach(key => {
