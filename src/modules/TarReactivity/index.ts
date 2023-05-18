@@ -1,7 +1,8 @@
+import TarFn from "../TarFn/index"
 import checkDom from "./checkDom"
 import domNode from "./domNode.type"
 
-const Observer = (obj: any, domNode?: domNode) => {
+const Observer = <T>(obj: any, domNode?: domNode, fns?: T) => {
   const domTree = typeof(domNode) === 'string' ? document.querySelector(domNode!) as HTMLAreaElement : domNode as HTMLAreaElement
   if (!obj || typeof obj !== 'object') return
   Object.keys(obj).forEach(key => {
@@ -30,6 +31,7 @@ const Observer = (obj: any, domNode?: domNode) => {
       }
     })
   })
+  TarFn(domNode!, fns)
   return obj
 }
 export default Observer

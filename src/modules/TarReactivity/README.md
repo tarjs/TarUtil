@@ -32,3 +32,15 @@ const data = tar.createObserver({
     color: 'color: red'
 }, '#app')
 ```
+
+If you want bind function you can push a functons object
+
+```javascript
+const count = () => {
+    data.count = data.count + 1
+}
+
+const data = tar.createObserver({
+    count: 1
+}, '#app', { count })
+```

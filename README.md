@@ -16,6 +16,7 @@ After build, you have a esm or commonjs version release. You can use `dist/esm/i
 
 ### Some functions to use:
 [TarReactivity](./src/modules/TarReactivity/README.md)\
+[TarFn](./src/modules/TarFn/README.md)\
 [TarStyle](./src/modules/TarStyle/README.md)
 
 ## License

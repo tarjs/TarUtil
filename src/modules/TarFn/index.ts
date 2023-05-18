@@ -1,6 +1,6 @@
 import domNode from "../TarReactivity/domNode.type"
 
-export default (node: domNode, fns: any) => {
+export default <T>(node: domNode, fns: T) => {
   const dom = typeof(node) === 'string' ? document.querySelector(node!) : node
   const childNodes = dom?.childNodes as NodeListOf<HTMLElement>
   forEachDom(childNodes, fns)
