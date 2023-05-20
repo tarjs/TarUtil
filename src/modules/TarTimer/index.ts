@@ -2,7 +2,7 @@ export default class {
   fn!: () => void
   time!: number
   timer!: any
-  setTimer(fn: () => void, time: number) {
+  constructor(fn: () => void, time: number) {
     this.time = time
     this.fn = fn
   }

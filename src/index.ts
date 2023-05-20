@@ -3,18 +3,17 @@ import Observer from "./modules/TarReactivity/index"
 import TarFn from "./modules/TarFn/index"
 import TarTimer from "./modules/TarTimer/index"
 import TarStyle from "./modules/TarStyle/index"
+import TarWatch from "./modules/TarWatch/index"
 
 const tar = {
     createRequest: TarRequest,
     createObserver: Observer,
     createFn: TarFn,
     createTimer: TarTimer,
-    createStyle: TarStyle
+    createStyle: TarStyle,
+    createWatch: TarWatch
 }
-export default tar
 
-export const createRequest = TarRequest
-export const createObserver = Observer
-export const createFn = TarFn
-export const createTimer = TarTimer
-export const createStyle = TarStyle
+const { createObserver, createFn, createStyle, createWatch, createTimer, createRequest } = tar
+
+export { createObserver, createFn, createStyle, createWatch, createTimer, createRequest, tar as default }
