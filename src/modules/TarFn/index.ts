@@ -1,13 +1,13 @@
-import domNode from "../TarReactivity/domNode.type"
+import type domNode from '../TarReactivity/domNode.type'
 
 export default <T>(node: domNode, fns: T) => {
-  const dom = typeof(node) === 'string' ? document.querySelector(node!) : node
+  const dom = typeof (node) === 'string' ? document.querySelector(node!) : node
   const childNodes = dom?.childNodes as NodeListOf<HTMLElement>
   forEachDom(childNodes, fns)
 }
 
-const forEachDom = (childNodes: NodeListOf<HTMLElement>, fns: any) => {
-  childNodes?.forEach(childNode => {
+function forEachDom(childNodes: NodeListOf<HTMLElement>, fns: any) {
+  childNodes?.forEach((childNode) => {
     if (childNode instanceof HTMLElement && childNode.children.length === 0) {
       if (childNode instanceof HTMLElement) {
         childNode.getAttributeNames().forEach((attr) => {
@@ -35,12 +35,13 @@ const forEachDom = (childNodes: NodeListOf<HTMLElement>, fns: any) => {
           }
         })
       }
-    } else if (childNode instanceof HTMLElement) {
+    }
+    else if (childNode instanceof HTMLElement) {
       const itemDom = childNode.children as unknown as Array<HTMLElement>
       const items: Array<unknown> = []
-      for (let i = 0; i < itemDom.length; i++) {
+      for (let i = 0; i < itemDom.length; i++)
         items.push(itemDom[i])
-      }
+
       forEachDom((items as unknown as NodeListOf<HTMLElement>), fns)
     }
   })

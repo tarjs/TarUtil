@@ -6,6 +6,7 @@ export default class {
     this.time = time
     this.fn = fn
   }
+
   startTimer() {
     if (this.timer) {
       window.clearTimeout(this.timer)
@@ -16,6 +17,7 @@ export default class {
       this.startTimer()
     }, this.time)
   }
+
   stopTimer() {
     window.clearTimeout(this.timer)
     this.timer = null
