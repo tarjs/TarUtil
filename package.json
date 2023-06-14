@@ -21,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.5",
+    "@antfu/ni": "^0.21.4",
     "@blaumaus/rollup-plugin-uglify": "^7.0.1",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.14",
@@ -31,8 +32,5 @@
     "rollup-plugin-ts": "^3.2.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.9.4"
-  },
-  "dependencies": {
-    "ni": "^0.0.2"
   }
 }
