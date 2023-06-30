@@ -12,7 +12,7 @@ Before use, you need build this repo. You can use some command to build like thi
 pnpm build:esm // to build esm version
 pnpm build // to build iife version
 ```
-After build, you have a esm or commonjs version release. You can use `dist/esm/index.js` or `dist/cjs/index.js` to coding a web page.
+After build, you have a esm or commonjs version release. You can use `dist/bundle.js` to coding a web page.
 
 ### Some functions to use:
 [TarReactivity](./src/modules/TarReactivity/README.md)\
